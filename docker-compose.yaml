@@ -12,12 +12,14 @@ services:
       - /data/springboot-app
     
   mysqldb:
-    image: mysql:5.7
+   image: mysql
     networks:
       - springboot-db-net
+    #command: --default-authentication-plugin=mysql_native_password
+    #restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=basic_project
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: basic_project
     volumes:
       - /data/mysql
 
