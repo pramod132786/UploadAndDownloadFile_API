@@ -23,6 +23,11 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
+	@GetMapping("/msg")
+	public String getMessage(){
+		return "Hello Welcome...!";
+	}
+
 	@PostMapping("/create")
 	public ResponseEntity<UserEntity> createUser(@RequestBody UserEntity user) {
 
